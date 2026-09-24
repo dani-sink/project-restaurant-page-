@@ -24,4 +24,4 @@ contactButton.addEventListener("click", function(){
 
 home_load();
 
-console.log("Hello");
+console.log("Hello there!"); 
