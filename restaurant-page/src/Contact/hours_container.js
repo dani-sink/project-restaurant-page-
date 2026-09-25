@@ -2,51 +2,47 @@ export const hours_container = function(){
     const hoursContainer = document.createElement("div");
 
     const hoursText = document.createElement("p");
+    hoursText.classList.add("hours-text");
     hoursText.textContent = "Hours";
 
-    // Create the table container elements
-    const hoursTable = document.createElement("table");
-    const hoursTableHead = document.createElement("thead");
-    const hoursTableBody = document.createElement("tbody");
+    hoursContainer.appendChild(hoursText);
 
-    // Create and append the Header Row
-    const headerRow = document.createElement("tr");
-    const headers = ["Hours"];
-
-    headers.forEach(text => {
-        const th = document.createElement("th");
-        th.textContent = text;
-        headerRow.appendChild(th);
-    });
-    hoursTableHead.appendChild(headerRow);
-
-    // Create and append the data rows
     const scheduleData = [
-        ["Tue — Thu", "5 — 10 pm"],
-        ["Fri — Sat", "5 — 11 pm"],
-        ["Sunday", "4 — 9 pm"],
-        ["Monday", "Closed"],
+        {
+            days: "Tue — Thu", 
+            hours: "5 — 10 pm",
+        },
+        {
+            days: "Fri — Sat",
+            hours: "5 — 11 pm",
+        },
+        {
+            days: "Sunday",
+            hours: "4 — 9 pm",
+        },
+        {
+            days: "Monday",
+            hours: "Closed",
+        },
     ]
 
-    scheduleData.forEach(rowData => {
-        const row = document.createElement("tr");
+    for (const data of scheduleData) {
+        const hoursRow = document.createElement("div");
+        hoursRow.classList.add("hours-row");
 
-        rowData.forEach(cellData => {
-            const td = document.createElement("td");
-            td.textContent = cellData;
-            row.appendChild(td);
-        });
+        const daysOfTheWeek = document.createElement("p");
+        daysOfTheWeek.classList.add("days-of-the-week");
+        daysOfTheWeek.textContent = data.days;
 
-        hoursTableBody.appendChild(row);
-    });
+        const hoursOfOperation = document.createElement("p");
+        hoursOfOperation.classList.add("hours-of-operation");
+        hoursOfOperation.textContent = data.hours;
 
-    // Assemble the table components
-    hoursTable.appendChild(hoursTableHead);
-    hoursTable.appendChild(hoursTableBody);
+        hoursRow.appendChild(daysOfTheWeek);
+        hoursRow.appendChild(hoursOfOperation);
+        hoursContainer.appendChild(hoursRow);
+    }
 
-    // Link text and table
-    hoursContainer.appendChild(hoursText);
-    hoursContainer.appendChild(hoursTable);
 
     return hoursContainer;
 }

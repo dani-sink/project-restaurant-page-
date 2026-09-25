@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+
+
+:root {
+    --espresso: #241c15;
+    --paper: #f7f3ec;
+    --ember: #e08a2b;
+    --ember-deep: #b4531e;
+    --cream: #f3e9da;
+    --ink: #2c241c;
+    --muted: #7c7268;
+    --line: #e2d9cc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "DM Sans", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    height: 100vh;
+    scrollbar-gutter: stable;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, #logo-text {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+}
+
+header {
+    padding: 1.1rem clamp(1.25rem, 5vw, 4rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--espresso);
+    color: var(--cream);
+}
+
+
+header > #logo-text {
+    font-size: 1.5rem;
+}
+
+header > #logo-text span {
+    color: var(--ember);
+}
+
+header > nav {
+    display: flex;
+}
+
+header > nav button {
+    padding: 0.5rem clamp(0.75rem, 3vw, 1.25rem);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--cream);
+    background: transparent;
+    border: none;
+    opacity: 0.7;
+    font-family: "DM Sans", system-ui, sans-serif;;
+}
+
+header > nav button:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+header > nav button.active {
+    text-decoration: underline;
+    text-decoration-color: var(--ember);
+    text-underline-offset: 0.75rem;
+    text-decoration-thickness: 2px;
+    opacity: 1;
+}
+
+#hero-section {
+    background: 
+        radial-gradient(120% 90% at 85% 0%, rgba(224,138,43,0.22), transparent 55%),
+    var(--espresso);
+    color: var(--cream);
+}
+
+.hero-text-container {
+    width: 50%;
+    padding: 10rem 0 8rem 0;
+    margin-left: clamp(2rem, 25vw, 16rem);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.5vh, 2rem, 5vh);
+}
+
+#hero-eyebrow {
+    color: #e08a2b;
+    font-size: clamp(1rem, 1.25vw, 1.2rem);
+    font-weight: 600;
+}
+
+#hero-headline {
+    font-size: clamp(3rem, 11vw ,6.5rem);
+}
+
+#hero-subhead {
+    font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+}
+
+#hero-address {
+    font-size: clamp(0.9rem, 1.25vw, 1.1rem);
+    color: var(--line);
+    opacity: 0.8;
+}
+
+#card-section {
+    margin: 0 auto;
+    max-width: 68rem;
+    padding: clamp(2.5rem, 7vw, 5rem) clamp(1.25rem, 6vw, 5rem);
+}
+
+.card-grid-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+    
+    grid-template-rows: 100px 100px;
+    column-gap: 3rem;
+    row-gap: 5rem;
+}
+
+#first-card-container {
+    margin-bottom: 4rem;
+}
+
+#first-card-container h2 {
+    font-size: clamp(1rem, 5vw , 2.5rem);
+    margin-bottom: 1.25rem;
+}
+
+
+#first-card-container p {
+    width: 65%;
+}
+
+
+#second-card-container, 
+#third-card-container,
+#fourth-card-container {
+    border-top: 2px solid var(--ember);
+}
+
+#second-card-container h3, 
+#third-card-container h3,
+#fourth-card-container h3 {
+    font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+    padding-top: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+#first-card-container p, 
+#second-card-container p, 
+#third-card-container p, 
+#fourth-card-container p 
+{
+    color: var(--muted);
+}
+
+
+.menu-container, 
+.contact-container {
+    max-width: 68rem;
+    padding: clamp(2.5rem, 7vw, 5rem) clamp(1.25rem, 6vw, 5rem);
+    margin: 0 auto;
+}
+
+.menu-header-container {
+    margin-bottom: clamp(1.25rem, 4vw, 3rem);
+}
+
+.menu-header-container h2 {
+    font-size: clamp(1.5rem, 5vw , 3rem);
+    margin-bottom: 0.5rem;
+}
+
+.menu-header-container p {
+    color: var(--muted);
+}
+
+.menu-item-section {
+    margin-bottom: 3rem;
+}
+
+.menu-section-header {
+    font-size: 1.75rem;
+    padding-bottom: 0.6rem;
+    color: var(--ember-deep);
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 1.5rem;
+}
+
+.menu-dish {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.25rem 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.menu-dish-name, 
+.menu-dish-price {
+    font-weight: 600;
+}
+
+.menu-dish-price {
+    color: var(--ember-deep);
+}
+
+.menu-dish-ingredients {
+    color: var(--muted);
+}
+
+
+.contact-header {
+    font-size: clamp(1.5rem, 5vw , 3rem);
+    margin-bottom: 1.75rem;
+}
+
+.contact-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: clamp(2rem, 4vw, 4.5rem);
+    
+}
+
+.where-container,
+.reservations-container {
+    margin-bottom: 1.75rem;
+}
+
+.where-text, 
+.reservations-text,
+.hours-text {
+    font-size: clamp(1.05rem, 2.5vw, 1.5rem);
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.address-line-one, 
+.address-line-two, 
+.address-number,
+.reservations-subtext {
+    color: var(--muted);
+}
+
+.reservations-subtext {
+    margin-bottom: 1rem;
+}
+
+.reservations-button {
+    background-color: var(--ember);
+    padding: 0.75rem 1.5rem;
+    color: var(--espresso);
+    font-weight: 600;
+    font-family: "DM Sans", system-ui, sans-serif;
+    font-size: 1.05rem;
+    border: none;
+    border-radius: 4px;
+}
+
+.reservations-button:hover {
+    background-color: var(--ember-deep);
+    cursor: pointer;
+    color: var(--cream);
+}
+
+.hours-table tr {
+    max-width: 22rem;
+    justify-content: space-between;
+}
+
+.hours-row {
+    display: flex;
+    max-width: 22rem;
+    justify-content: space-between;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.days-of-the-week {
+    color: var(--ink);
+    font-weight: 500;
+}
+
+.hours-of-operation {
+    color: var(--muted);
+}
+
+footer {
+    background-color: var(--espresso);
+    color: var(--muted);
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+footer span {
+    color: var(--ember);
+}

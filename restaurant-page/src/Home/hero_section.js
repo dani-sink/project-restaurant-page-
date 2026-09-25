@@ -1,8 +1,11 @@
-import "./styles.css";
+import "/src/styles.css";
 
 export const hero_section = function() {
     const heroSection = document.createElement("section");
     heroSection.id = "hero-section";
+
+    const heroTextContainer = document.createElement("div");
+    heroTextContainer.classList.add("hero-text-container");
 
     const eyebrow = document.createElement("p");
     eyebrow.id = "hero-eyebrow";
@@ -20,10 +23,12 @@ export const hero_section = function() {
     address.id = "hero-address";
     address.textContent = "Reservations recommended · 142 Kiln Street";
 
-    heroSection.appendChild(eyebrow);
-    heroSection.appendChild(headline);
-    heroSection.appendChild(subhead);
-    heroSection.appendChild(address);
+    heroTextContainer.appendChild(eyebrow);
+    heroTextContainer.appendChild(headline);
+    heroTextContainer.appendChild(subhead);
+    heroTextContainer.appendChild(address);
+
+    heroSection.appendChild(heroTextContainer);
 
     return heroSection;
 }

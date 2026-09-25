@@ -9,19 +9,27 @@ const contentSection = document.querySelector("#content");
 
 homeButton.addEventListener("click", function() {
     contentSection.replaceChildren();
+    homeButton.classList.add("active");
+    menuButton.classList.remove("active");
+    contactButton.classList.remove("active");
     home_load();
 });
 
 menuButton.addEventListener("click", function() {
     contentSection.replaceChildren();
+    homeButton.classList.remove("active");
+    menuButton.classList.add("active");
+    contactButton.classList.remove("active");
     menu_load();
 });
 
 contactButton.addEventListener("click", function(){
     contentSection.replaceChildren();
+    homeButton.classList.remove("active");
+    menuButton.classList.remove("active");
+    contactButton.classList.add("active");
     contact_load();
 });
 
 home_load();
-
-console.log("Hello there!"); 
+homeButton.classList.add("active");

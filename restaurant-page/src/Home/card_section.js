@@ -1,9 +1,14 @@
 export const card_section = function () {
     // Whole section container
     const cardSection = document.createElement("section");
+    cardSection.id = "card-section";
+
+    const cardGridContainer = document.createElement("div");
+    cardGridContainer.classList.add("card-grid-container");
     
     // First Card
     const firstCardContainer = document.createElement("div");
+    firstCardContainer.id = "first-card-container";
     const firstCardHighlight = document.createElement("h2");
     firstCardHighlight.textContent = "Everything touches the flame.";
     const firstCardText = document.createElement("p");
@@ -13,6 +18,7 @@ export const card_section = function () {
 
     // Second Card
     const secondCardContainer = document.createElement("div");
+    secondCardContainer.id = "second-card-container";
     const secondCardHighlight = document.createElement("h3");
     secondCardHighlight.textContent = "Over live fire";
     const secondCardText = document.createElement("p");
@@ -22,6 +28,7 @@ export const card_section = function () {
 
     // Third Card
     const thirdCardContainer = document.createElement("div");
+    thirdCardContainer.id = "third-card-container";
     const thirdCardHighlight = document.createElement("h3");
     thirdCardHighlight.textContent = "From nearby farms";
     const thirdCardText = document.createElement("p");
@@ -31,6 +38,7 @@ export const card_section = function () {
 
     // Fourth Card
     const fourthCardContainer = document.createElement("div");
+    fourthCardContainer.id = "fourth-card-container";
     const fourthCardHighlight = document.createElement("h3");
     fourthCardHighlight.textContent = "Natural wine";
     const fourthCardText = document.createElement("p");
@@ -38,10 +46,12 @@ export const card_section = function () {
     fourthCardContainer.appendChild(fourthCardHighlight);
     fourthCardContainer.appendChild(fourthCardText);
 
+    cardGridContainer.appendChild(secondCardContainer);
+    cardGridContainer.appendChild(thirdCardContainer);
+    cardGridContainer.appendChild(fourthCardContainer);
+
     cardSection.appendChild(firstCardContainer);
-    cardSection.appendChild(secondCardContainer);
-    cardSection.appendChild(thirdCardContainer);
-    cardSection.appendChild(fourthCardContainer);
+    cardSection.appendChild(cardGridContainer);
 
     return cardSection;
 }
