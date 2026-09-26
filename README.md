@@ -5,8 +5,6 @@ A single-page restaurant site with tabbed navigation, where **every element on t
 **Live demo:** https://dani-sink.github.io/project-restaurant-page-/
 **Repo:** https://github.com/dani-sink/project-restaurant-page-
 
-<!-- Replace with a real screenshot or (better) a GIF of switching between tabs. -->
-
 ![Restaurant page demo](./live-demo-img.png)
 
 ## What it demonstrates
@@ -37,21 +35,19 @@ A single-page restaurant site with tabbed navigation, where **every element on t
 git clone https://github.com/dani-sink/project-restaurant-page-.git
 cd project-restaurant-page-
 npm install
-npx webpack serve      # dev server at http://localhost:8080
+npm run dev            # dev server at http://localhost:8080
 ```
 
 To build the production bundle into `dist/`:
 
 ```bash
-npx webpack
+npm run build
 ```
 
 ## What I learned
 
-<!-- Rewrite this in your own words — a genuine reflection is what makes a project read as real work rather than a copied tutorial. Draft based on this project: -->
-
-- Keeping `template.html` nearly empty and building every element in JavaScript made me structure the app as one module per tab, each responsible for its own DOM — a much cleaner separation than piling everything into one file.
-- Setting up webpack from scratch (loaders, the HTML plugin, the dev server) and then deploying the bundled output to GitHub Pages taught me the full path from source code to a live site, not just writing the code.
+- Keeping `template.html` nearly empty and building every element in JavaScript, structuring the app as one module per tab, each responsible for its own DOM — a much cleaner separation than piling everything into one file.
+- Setting up webpack from scratch (loaders, the HTML plugin, the dev server) and then deploying the bundled output to GitHub Pages.
 - The trickiest part was the tooling around the code rather than the code itself — getting the build, the dev-server live reload, and the `gh-pages` deployment all working end to end.
 
 ## Possible improvements

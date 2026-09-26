@@ -1,18 +1,13 @@
-// webpack.config.js
 import path from "node:path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
 export default {
-  mode: "development",
   entry: "./src/index.js",
   output: {
     filename: "main.js",
     path: path.resolve(import.meta.dirname, "dist"),
-    clean: true,              // empty dist before each build
-  },
-  devtool: "eval-source-map",             // errors point to src, not the bundle
-  devServer: {
-    watchFiles: ["./src/template.html"],  // dev server ignores HTML template otherwise
+    clean: true,
+    publicPath: "./",   // needed so assets resolve on GitHub Pages' subpath
   },
   plugins: [
     new HtmlWebpackPlugin({ template: "./src/template.html" }),
